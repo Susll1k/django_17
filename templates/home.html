@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <ul>
+        {% for icecream in icecreams %}
+            <li>
+                {{ icecream.name }}, {{ icecream.price }}, {{ icecream.flavor }}
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    <a href="{% url 'create' %}">Create a new book</a>
+</body>
+</html>
